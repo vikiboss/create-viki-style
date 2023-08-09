@@ -1,9 +1,16 @@
 {
   "name": "create-viki-style",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "cli to generate style configs: eslint & prettier",
   "bin": "bin.js",
+  "files": [
+    "bin.js",
+    "templates"
+  ],
   "repository": "git@github.com:vikiboss/create-viki-style.git",
   "author": "Viki <hi@viki.moe> (https://github.com/vikiboss)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.4.9"
+  }
 }

@@ -1,8 +1,13 @@
 #!/usr/bin/env node
 
 const fs = require('fs')
+const path = require('path')
 
-const eslintConfig = JSON.stringify({ extends: '@vmoe' }, null, 2)
+const dirents = fs.readdirSync(path.join(__dirname, './templates'), { withFileTypes: true }) || []
 
-fs.writeFileSync('.eslintrc', eslintConfig)
-fs.writeFileSync('.prettierrc', '"@vmoe/prettier-config"')
+dirents.forEach(file => {
+  const src = path.join(__dirname, './templates', file.name)
+  const dest = path.join(process.cwd(), file.name)
+
+  fs.copyFileSync(src, dest)
+})
